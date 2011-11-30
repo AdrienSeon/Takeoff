@@ -1,0 +1,5 @@
+# Numerous always-ignore extensions
+*.psd
+
+# OS or Editor folders
+.ress
