@@ -177,7 +177,6 @@ input,textarea{
 	$MAIN
 \*------------------------------------*/
 html{
-	overflow-y: scroll; /* Force scrollbars 100% of the time */
 	font-size: 100%; /* Use 16px as per informationarchitects.jp/en/100e2r/ and wilsonminer.com/posts/2008/oct/20/relative-readability/ */
 	line-height: 1.5; /* A safe default for type of any size. */
 	/* You should always specify a colour and background, override these in your own stylesheet if desired. */
@@ -205,7 +204,7 @@ Include this igloo in igloos.css
 
 
 /*------------------------------------*\
-	$CLEARFIX
+	$Non-Semantic Helper Classes
 \*------------------------------------*/
 /*
 Fix clearing issues as per:  nicolasgallagher.com/micro-clearfix-hack/
@@ -230,8 +229,12 @@ Fix clearing issues as per:  nicolasgallagher.com/micro-clearfix-hack/
 .media: after{
 	clear: both;
 }
-
-
+.ir { display: block; border: 0; text-indent: -999em; overflow: hidden; background-color: transparent; background-repeat: no-repeat; text-align: left; direction: ltr; *line-height: 0; }
+.ir br { display: none; }
+.hidden { display: none !important; visibility: hidden; }
+.visuallyhidden { border: 0; clip: rect(0 0 0 0); height: 1px; margin: -1px; overflow: hidden; padding: 0; position: absolute; width: 1px; }
+.visuallyhidden.focusable:active, .visuallyhidden.focusable:focus { clip: auto; height: auto; margin: 0; overflow: visible; position: static; width: auto; }
+.invisible { visibility: hidden; }
 
 
 
@@ -836,6 +839,7 @@ Green border 	== 	perfect, nice one!
 CSS for tablets and narrower devices
 */
 @media (min-width:  721px) and (max-width:  960px){
+
 }
 /*--- END NARROW ---*/
 
@@ -854,24 +858,25 @@ Linearise it!
 /*------------------------------------*\
 	MAIN
 \*------------------------------------*/
-html{
-	font-size: 1.125em; /* Make text slightly larger for smaller devices to improve readability. */
-}
-body{
-	-webkit-text-size-adjust: none;
-}
-.wrapper{
-	width: auto;
-}
-.grids{
-	margin: 0;
-	width: auto;
-}
-[class^="grid-"],
-.grids [class^="grid-"]{
-	width: auto;
-	float: none;
-	margin: 0;
+	html{
+		font-size: 1.125em; /* Make text slightly larger for smaller devices to improve readability. */
+	}
+	body{
+		-webkit-text-size-adjust: none;
+	}
+	.wrapper{
+		width: auto;
+	}
+	.grids{
+		margin: 0;
+		width: auto;
+	}
+	[class^="grid-"],
+	.grids [class^="grid-"]{
+		width: auto;
+		float: none;
+		margin: 0;
+	}
 }
 
 
